@@ -2,6 +2,8 @@ const express = require("express");
 const logger = require("morgan");
 const path = require("path");
 
+const indexRoutes = require("./routes/indexRoutes");
+
 const app = express();
 
 // set view engine
@@ -16,3 +18,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // routes
 app.use("/", indexRoutes);
+
+app.listen(4000, () => {
+	console.log("Listening on port 4000");
+});

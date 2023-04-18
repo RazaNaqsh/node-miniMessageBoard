@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mini MessageBoard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <a href="/new">
+        <button>Add new post</button>
+    </a>
+    <div class="message-list">
+        <% if (messages.length){ %>
+            <ul>
+                <% messages.forEach(msg=>{ %>
+                    <li>
+                        <span class="user">
+                            <%= msg.user %>
+                        </span>
+                        <span class="text">
+                            <%= msg.text %>
+                        </span>
+                        <span class="date">
+                            <%= msg.added %>
+                        </span>
+                    </li>
+                    <% }) %>
+            </ul>
+            <% } %>
+    </div>
+</body>
+
+</html>
