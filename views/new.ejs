@@ -14,14 +14,14 @@
     <div class="post-form">
         <form method="POST" action="/new">
             <div>
-                <label> User:
-                    <input name="user" type="text" minlength="4" maxlength="15" required>
-                </label>
+
+                <input name="user" type="text" minlength="4" maxlength="15" placeholder="Enter User..." required>
+
             </div>
             <div>
-                <label for="text"> Text:
-                </label>
-                <textarea name="text" id="text" cols="30" rows="10" required maxlength="300"></textarea>
+
+                <textarea name="text" id="text" cols="30" rows="5" placeholder="Enter Text..." required
+                    maxlength="300"></textarea>
             </div>
             <button>Submit</button>
         </form>

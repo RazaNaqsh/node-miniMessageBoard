@@ -1,3 +1,5 @@
+const { formatDistanceToNow } = require("date-fns");
+
 const express = require("express");
 const router = express.Router();
 
@@ -5,7 +7,7 @@ const messages = [
 	{
 		text: "Moshi moshiii?..",
 		user: "npc",
-		added: new Date(),
+		added: `~ ${formatDistanceToNow(new Date(), { addSuffix: true })}`,
 	},
 ];
 
@@ -17,11 +19,13 @@ router.get("/new", (req, res) => {
 });
 router.post("/new", (req, res) => {
 	const { text, user } = req.body;
+
 	messages.push({
 		text,
 		user,
-		added: new Date(),
+		added: `~ ${formatDistanceToNow(new Date(), { addSuffix: true })}`,
 	});
+	console.log();
 	res.redirect("/");
 });
 
